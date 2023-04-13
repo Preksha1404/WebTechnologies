@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <form name="regFrm" method="post">
+            Name:<input type="text" id="nameId"><br>
+            <span id="nameIdErr"></span><br>
+            Mobile No:<input id="numberId"><br>
+            <span id="numberIdErr"></span><br>
+            Password:<input type="password" id="psswdId"><br>
+            <span id="psswdIdErr"></span><br>
+            <input type="button" value="submit" onclick="doValidate()">
+        </form>
+        <script>
+            function doValidate(){
+                let isValid=true;
+                let Name=document.getElementById("nameId").value;
+                let Mobile_no=document.getElementById("numberId").value;
+                let Password=document.getElementById("psswdId").value;
+
+                if(Name.length <=0){
+                    document.getElementById("nameIdErr").textContent="Please enter your name"
+                    isValid=false;
+                }
+                if(Mobile_no.length<=8){
+                    document.getElementById("numberIdErr").textContent="Please enter 9 or 10 digit mobile number"
+                    isValid=false;
+                }
+                if(Password.length<=7 ){
+                    document.getElementById("psswdIdErr").textContent="Please enter 8 character password"
+                    isValid=false;
+                }
+                if(isValid){
+                    document.regFrm.submit();
+                }
+
+            }
+        </script>
+    </body>
+</html>

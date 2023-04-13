@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title> 
+    <style> 
+    .container{ 
+    text-align: center; 
+    margin-left: 35%; 
+    margin-top: 3.5%; 
+    width: 30%; 
+    background-color:lightblue; 
+    } 
+    form{ 
+    display: inline-block; 
+    box-sizing: border-box; 
+    text-align: left; 
+    padding: 30px; 
+    } 
+    </style> 
+    </head> 
+    <body> 
+        <div class="container"> 
+        <h1>Registration Form</h1> 
+        <form name ="myForm" onsubmit="return validateForm()" method="post"> User id: 
+        <input type="text" name="uid"><br><br> 
+        Password: 
+        <input type="password" name="pwd" /*required*/><br><br> 
+        Name: 
+        <input type="text" name="Name" /*required*/><br><br> 
+        Address:<br> 
+        <textarea name="address" rows="2" cols="30"></textarea><br><br> Country: 
+        <select name="" id="country" /*required*/> 
+        <option value="null">Please Select a country</option> 
+        <option value="India">India</option>
+        <option value="Newzeland">Newzeland</option> 
+        <option value="Bangladesh">Bangladesh</option> 
+        <option value="Germany">Germany</option> 
+        <option value="England">England</option> 
+        <option value="USA">USA</option> 
+        </select><p class="output"></p><br> 
+        ZIP Code: 
+        <input type="text" name="zipc" /*required*/><br><br> 
+        Email: 
+        <input type="email" name="Email" /*required*/><br><br> Sex: 
+        <input type="radio" name="sex" id="">Male 
+        <input type="radio" name="sex" id="">Female<br><br> Language: 
+        <input type="checkbox" name="Language" id="">English <input type="checkbox" name="Language" id="">Non English<br><br> About:<br> 
+        <textarea name="about" rows="4" cols="30"></textarea><br><br> <input type="submit" value="submit"> 
+        </form> 
+        </div> 
+    <script>
+    function validateForm() { 
+        //Validation of userid 
+        let uid = document.forms["myForm"]["uid"].value; 
+        if (uid == "") { 
+            alert("Userid must be filled out"); 
+            return false; 
+        } 
+        else if (uid.length<5 || uid.length>12 ) { 
+            alert("Userid must be of length 5 to 12"); 
+            return false; 
+        } 
+        //validation of password 
+        let pwd = document.forms["myForm"]["pwd"].value; 
+        if (pwd == "") { 
+            alert("Password must be filled out"); 
+            return false; 
+        } 
+        else if (pwd.length<5 || pwd.length>12 ) { 
+            alert("Password must be of length 5 to 12");
+            return false; 
+        } 
+        //validation of name 
+        let Name = document.forms["myForm"]["Name"].value; 
+        if (Name == "") { 
+            alert("Name must be filled out"); 
+            return false; 
+        } 
+        var letters = /^[A-Za-z]+$/; 
+        if(!(Name.match(letters))) 
+        { 
+            alert('Please input alphabet characters only'); 
+            return true; 
+        } 
+        //validation of country 
+        selectElement = document.querySelector('#country'); 
+        output = selectElement.value; 
+        if(output == "null") 
+        { 
+            alert("Country must be filled out"); 
+            return false; 
+        } 
+        // validation of ZIP code 
+        let zip = document.forms["myForm"]["zipc"].value; 
+        if (zip == "") { 
+            alert("ZIP code must be filled out"); 
+            return false; 
+        } 
+        var num = /^[0-9]+$/; 
+        if(!(zip.match(num))) 
+        { 
+            alert('Please input numeric values only'); 
+            return true; 
+        } 
+        // validation of email 
+        let email = document.forms["myForm"]["Email"].value; 
+        if (email == "") { 
+            alert("Email code must be filled out"); 
+            return false; 
+        } 
+        var em = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(!(email.match(em))) 
+        { 
+            alert('Please input valid emails only'); 
+            return true; 
+        } 
+        //validation of sex 
+        var gen= document.querySelector('input[name="sex"]:checked'); if(gen == null) 
+        { 
+            alert("Sex must be Selected"); 
+            return false; 
+        } 
+        //validation of language 
+        var lang= document.querySelector('input[name="Language"]:checked'); if(lang == null) 
+        { 
+            alert("Language must be Selected"); 
+            return false; 
+        } 
+    }
+    </script> 
+    </body> 
+</html> 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=, initial-scale=1.0">
+<title>Moving Image</title>
+</head>
+<body>
+<h2>Moving image based on arrow key of keyboard !!</h2>
+<img src="./bd840f8ae46b67a1b82a5e318cc3cf07--wallpaper-space-hd-wallpaper.jpg" id="img" style="position:absolute; left:0px; top:0px;" />
+<script>
+    function moveImage(e) { 
+        var img = document.getElementById("img"); 
+        if (e.keyCode == 37) { cs37();} 
+        else if (e.keyCode == 38) { cs38();} 
+        else if (e.keyCode == 39) { cs39();} 
+        else if (e.keyCode == 40) { cs40();}
+    } 
+    function cs37() { img.style.left = parseInt(img.style.left) - 10 + "px";} 
+    function cs38() { img.style.top = parseInt(img.style.top) - 10 + "px";} 
+    function cs39() { img.style.left = parseInt(img.style.left) + 10 + "px";} 
+    function cs40() { img.style.top = parseInt(img.style.top) + 10 + "px";} 
+    document.onkeydown = moveImage;
+</script>
+</body>
+</html>

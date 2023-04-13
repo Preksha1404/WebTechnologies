@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+    Enter Number1:<input type="text" id="numId1">
+    Enter Number2:<input type="text" id="numId2">
+    Enter Number3:<input type="text" id="numId3">
+    <script>
+        let mypromise1=new Promise(function(resolve,reject){
+            let x=document.getElementById("numId1");
+            if(x>100){
+                resolve("You did it!!");
+            }
+            else{
+                reject("Failed");
+            }
+        })
+        let mypromise2=new Promise(function(resolve,reject){
+            let y=document.getElementById("numId2");
+            if(y>100){
+                resolve("You did it!!");
+            }
+            else{
+                reject("Failed");
+            }
+        })
+        let mypromise3=new Promise(function(resolve,reject){
+            let z=document.getElementById("numId3");
+            if(z>100){
+                resolve("You did it!!");
+            }
+            else{
+                reject("Failed");
+            }
+        })
+        Promise.all(mypromise1,mypromise2,mypromise3).then(function(){
+            console.log("All promise passed!!");
+        })
+        .catch(function(){
+            console.log("Failed!!");
+        })
+    </script>
+</body>
+</html>

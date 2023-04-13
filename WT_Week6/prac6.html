@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoural</title>
+</head>
+<body bgcolor="azure">
+    <h1 class="heading"> Spoural Registartion Form </h1>
+    <br>
+    <div class="Frame">
+    <form>
+        <label for="type-of-event">Type of Event: </label><br>
+        <select id="type-of-event" name="type-of-event">
+          <option value="individual">Individual</option>
+          <option value="group">Group</option>
+        </select>
+        <br><br>
+        <label for="event-listing">Event Listing: </label><br>
+        <select id="event-listing" name="event-listing">
+          <option value="workshop1">Workshop 1</option>
+          <option value="workshop2">Workshop 2</option>
+          <option value="panel-discussion">Panel Discussion</option>
+          <option value="networking">Networking</option>
+        </select>
+        <br><br>
+        <label >Student ID: </label><br>
+        <input type="text" id="StudentID" >
+        <br><br>
+        <label for="branch">Branch of Student: </label><br>
+        <input type="radio" id="CE" name="branch"  value="CE"><label for="branch">CE</label>
+        <input type="radio" name="branch" id="IT"   value="IT"><label for="branch">IT</label>
+        <input type="radio" name="branch" id="CS"  value="CS"><label for="branch">CS</label>
+        <input type="radio" name="branch" id="Pharmacy"  value="Pharmacy"><label for="branch">Pharmacy</label>
+        <input type="radio" name="branch" id="BSC"  value="BSC"><label for="branch">BSC</label>
+        <input type="radio" name="branch" id="MSC"  value="MSC"><label for="branch">MSC</label>
+        <br><br>
+        <label for="contact-number">Contact Number: </label><br>
+        <input type="text" id="contactNumber" name="contact-number">
+        <br><br>
+        <label for="department-name">Institute Name: </label><br>
+        <input type="text" id="Institute" name="Institute">
+        <br><br>
+        <label for="semester">Semester: </label><br>
+        <input type="number" id="semester" name="semester">
+        <br><br>
+        <button type="submit" onclick="Vald()">Submit</button>
+      </form> 
+    </div>
+    <script src="./prac6.js"></script>
+</body>
+</html>

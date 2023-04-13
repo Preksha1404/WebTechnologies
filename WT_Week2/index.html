@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Calculator</title>
+</head>
+<body>
+<form name="form1">
+<input type="text" id="calc" name="answer"><br><br>
+<input type="button" id="no1" value="1" onclick="form1.answer.value+='1'">
+<input type="button" id="no2" value="2" onclick="form1.answer.value+='2'">
+<input type="button" id="no3" value="3" onclick="form1.answer.value+='3'">
+<input type="button" id="np" value="+" onclick="form1.answer.value+='+'"><br><br>
+<input type="button" id="no4" value="4" onclick="form1.answer.value+='4'">
+<input type="button" id="no5" value="5" onclick="form1.answer.value+='5'">
+<input type="button" id="no6" value="6" onclick="form1.answer.value+='6'">
+<input type="button" id="nm" value="*" onclick="form1.answer.value+='*'"><br><br>
+<input type="button" id="no7" value="7" onclick="form1.answer.value+='7'">
+<input type="button" id="no8" value="8" onclick="form1.answer.value+='8'">
+<input type="button" id="no9" value="9" onclick="form1.answer.value+='9'">
+<input type="button" id="ns" value="-" onclick="form1.answer.value+='-'"><br><br>
+<input type="button" id="nod" value="." onclick="form1.answer.value+='.'">
+<input type="button" id="no0" value="0" onclick="form1.answer.value+='0'">
+<input type="button" id="nd" value="/" onclick="form1.answer.value+='/'">
+<input type="button" id="ne"value="=" onclick="form1.answer.value=eval(form1.answer.value)"><br><br>
+<input type = "button" id="cl" value = "Clear All" onclick = "form1.answer.value = ' ' " id="clear" > <br>
+</form>
+</body>
+</html>
